@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8">
+  <title>Ajax</title>
+    <body>
+      <h1>Ajax</h1>
+      <ul>
+      <li>AJAX is not a programming language</li>
+      <li>AJAX is a technique for accessing Web servers from a Web page</li>
+      <li>AJAX stands for Asynchronous JavaScript And XML</li>
+      </ul>
+    </body>
+</html>
