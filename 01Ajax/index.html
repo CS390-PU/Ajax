@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+ 
+  <title>01Ajax</title>
+</head>
+<!-- Questions:
+1. What is onreadystatechange?
+2. How/When is onreadystatechange used?
+3. What is the difference between httpRequest.readyState and 
+    httpRequest.status?
+ -->
+<body>
+  <button id="ajaxButton" type="button">Make a request</button>
+
+  <script>
+    // https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started
+    (function () {
+      var httpRequest;
+      document.getElementById("ajaxButton").addEventListener('click', makeRequest);
+
+      function makeRequest() {
+        httpRequest = new XMLHttpRequest();
+
+        if (!httpRequest) {
+          alert('Giving up :( Cannot create an XMLHTTP instance');
+          return false;
+        }
+        httpRequest.onreadystatechange = alertContents;
+        httpRequest.open('GET', 'http://localhost:8081/01Ajax/helloworld.html');
+        httpRequest.send();
+      }
+
+      function alertContents() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+          if (httpRequest.status === 200) {
+            // alert(httpRequest.responseText);
+            console.log(httpRequest.responseText);
+          } else {
+            alert('There was a problem with the request.');
+          }
+        }
+      }
+    })();
+  </script>
+</body>
+
+</html>
