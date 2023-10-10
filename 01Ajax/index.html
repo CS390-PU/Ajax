@@ -27,7 +27,8 @@
           alert('Giving up :( Cannot create an XMLHTTP instance');
           return false;
         }
-        httpRequest.onreadystatechange = alertContents;
+        // httpRequest.onreadystatechange = alertContents; // old school
+        addEventListener ("readystatechange", alertContents);
         httpRequest.open('GET', 'helloworld.html');
         httpRequest.send();
       }
