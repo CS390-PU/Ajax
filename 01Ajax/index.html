@@ -28,7 +28,7 @@
           return false;
         }
         // httpRequest.onreadystatechange = alertContents; // old school
-        addEventListener ("readystatechange", alertContents);
+        httpRequest.addEventListener ("readystatechange", alertContents);
         httpRequest.open('GET', 'helloworld.html');
         httpRequest.send();
       }
